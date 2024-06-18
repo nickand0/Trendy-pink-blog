@@ -5,81 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog de Technologie</title>
     <!-- Inclure tailwind -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/article.css">
     <!-- font roboto -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script>
-        tailwind.config = {
-          theme: {
-            extend: {
-                fontFamily: {
-                    roboto: ['Roboto', 'sans-serif'],
-                },
-            }
+    <script src="src/script.js"></script>
+    <style>
+        #mobile-menu {
+          transform: translateX(100%);
+          transition: transform 0.3s ease;
+        }
+    
+        #mobile-menu.open {
+          display: block;
+          transform: translateX(0);
+        }
+        @media (max-width: 640px) {
+          #mobile-menu {
+            width: 100%;
           }
         }
-      </script>
+      </style>
 </head>
-<body>
-    <header class="bg-indigo-600 py-2">
-        <p class="text-white text-center">claim now 50% off offers to suubscribe articlin🔥</p>
+<body class="font-Varela">
+    <header class="fixed inset-x-0 top-0 z-50 bg-indigo-600 ">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+          <div class="flex lg:flex-1">
+            <a href="#" class="flex items-center -m-1.5 p-1.5">
+              <span class="sr-only">TRENDY PINK</span>
+              <img class="h-9 w-auto" src="assets/logo/2.png" alt="TRENDY PINK">
+              <span class="text-white text-2xl font-bold ml-2 font-Jost">TRENDY PINK</span>
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button id="menu-toggle" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+          </div>
+          <div id="nav-links" class="hidden lg:flex lg:gap-x-12">
+            <a href="index.html" class="text-lg font-normal leading-6 text-gray-200 hover:text-white visited:text-white">Blog</a>
+            <a href="" class="text-lg font-normal leading-6 text-gray-200 hover:text-white visited:text-white">Travail</a>
+            <a href="" class="text-lg font-normal leading-6 text-gray-200 hover:text-white visited:text-white">Équipe</a>
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="text-lg font-normal leading-6 text-white border-transparent hover:border-white">Contactez-nous</a>
+          </div>
+        </nav>
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div id="mobile-menu" role="dialog" aria-modal="true" class="bg-indigo-700 lg:hidden fixed top-0 right-0 h-screen w-2/5">
+          <div class="flex items-center justify-between p-6">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-9 w-auto" src="assets/logo/2.png" alt="">
+            </a>
+            <button id="close-menu" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="space-y-1 px-2 pb-3 pt-2">
+            <a href="index.html" class="block rounded-md py-3 px-4 text-lg font-normal leading-6 text-white hover:bg-indigo-500 hover:text-white">Blog</a>
+            <a href="#" class="block rounded-md py-3 px-4 text-lg font-normal leading-6 text-white hover:bg-indigo-500 hover:text-white">Travail</a>
+            <a href="#" class="block rounded-md py-3 px-4 text-lg font-normal leading-6 text-white hover:bg-indigo-500 hover:text-white">Équipe</a>
+            <a href="#" class="block rounded-md py-3 px-4 text-lg font-normal leading-6 text-white bg-indigo-800 hover:bg-indigo-600 hover:text-white">Contactez-nous</a>
+          </div>
+        </div>
     </header>
-    <main>
-         <!--section lien reseaux sociaux-->
-        <section class="mt-5 py-4 px-20 flex justify-between items-center">
-            <div class="flex items-center">
-                <p class="mr-4"><b>published in © DigitalArtsMedia </b></p>
-                <p class="text-sm text-gray-400">5 mai 2024</p>
-            </div>
-            <div class="">
-                <!--linkdin-->
-                <a class="mx-2" href="https://www.linkedin.com" target="_blank">
-                    <i class="fa-brands fa-linkedin-in" ></i>
-                </a>
-                <!-- Facebook -->
-                <a class="mx-2"  href="https://www.facebook.com" target="_blank">
-                    <i class="fa-brands fa-facebook" style="color: #000000;"></i>
-                </a>
-                <!-- Instagram -->
-                <a class="mx-2" href="https://www.instagram.com" target="_blank">
-                    <i class="fa-brands fa-instagram" style="color: #000000;"></i>
-                </a>
-                <!-- File -->
-                <a class="mx-2" href="#">
-                    <i class="fa-solid fa-link" style="color: #000000;"></i>
-                </a>
-                <a class="mx-2" href="#">
-                    <i class="fas fa-ellipsis-h" style="color: #000000;"></i>
-                </a>
 
-            
-            </div>
-        </section>
+
+    <!--section lien reseaux sociaux-->
+    <section class="mt-5 pt-20 pb-4 px-10 flex justify-between items-center sm:px-20">
+        <div class="flex items-center">
+            <p class="mr-4"><b>published in © DigitalArtsMedia </b></p>
+            <p class="text-sm text-gray-400">5 mai 2024</p>
+        </div>
+        <div class="flex">
+            <!--linkdin-->
+            <a class="mx-2" href="https://www.linkedin.com" target="_blank">
+                <i class="fa-brands fa-linkedin-in" ></i>
+            </a>
+            <!-- Facebook -->
+            <a class="mx-2"  href="https://www.facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook" style="color: #000000;"></i>
+            </a>
+            <!-- Instagram -->
+            <a class="mx-2" href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram" style="color: #000000;"></i>
+            </a>
+        </div>
+    </section>
         
-         <!--section lecture text -->
-        <section class="mx-20">
-                <div class="mx-10">
+        <!--section lecture text -->
+        <section class="mx-10 ">
+                <div class=" ">
                     <h1 class="text-5xl text-center my-10 font-serif">Introduction aux Réseaux Neuronaux</h1>
                     <div class="flex justify-between items-center mt-2 mb-10" >
                         <div class="flex mb-2 items-center">
                             <img class="rounded-full border" src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="photo de profil"width="50">
-                            <p class="ml-2"><b >Samuel Jackson</b><br>
-                           <span  class="text-sm text-gray-500">Lorem, ipsum.</span> </p>
+                            <p class="ml-2"><b>Nikki</b><br>
+                           <span  class="text-sm text-gray-500">Etudiant a GMC</span> </p>
                         </div>
                         <div class="flex items-center">
-                            <p class="text-sm text-gray-500 mr-4">2 minutes read</p>
-                            <a href="">try Audio<i class="fa-solid fa-play fa-2xs ml-2" style="color: #000000;"></i></a>
+                            <p class="text-sm text-gray-500 mr-4">8 min de lecture</p>
+                            <button id="btnAudio">
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                                <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
+                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
+                                <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
+                              </svg>
+                            </button>
+                            <button id="Pausebutton" class="cursor-pointer hidden ml-2">
+                                <i  class="fa-solid fa-pause fa-lg "></i>
+                            </button>
+                            <button id="resumebutton" class="cursor-pointer hidden ml-2">
+                                <i class="fa-solid fa-play fa-lg "></i>
+                            </button>
+                           <button id="stopbutton" class="cursor-pointer hidden ml-2">
+                            <i id="stopbutton" class="fa-solid fa-stop fa-lg "></i>
+                           </button>
+                            
                         </div>
                     </div>
-                    <div class="flex justify-center mb-20  ">
-                        <iframe class="w-full shadow-2xl rounded-xl lg:h-max" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0" height="400" ></iframe>
+                    <div class="flex justify-center mb-20 cursor-pointer ">
+                        <iframe class="w-full h-56 shadow-2xl rounded-xl lg:h-max" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0"></iframe>
                     </div>
                     
-                    <div class="lg:mx-32">
+                    <div id="text" class="lg:mx-32">
                         <p class="text-justify "><b>Découvrez comment les réseaux neuronaux révolutionnent l'intelligence artificielle. 🧠🤖</b></p>
                 
-                        <h4 class=" text-xl font-bold mt-5 font-serif">Introduction</h4>
+                        <h4 class=" text-xl font-bold mt-5 font-serif text-wrap">Introduction</h4>
                         <p class="my-2">Contexte historique des réseaux neuronaux et leur importance aujourd'hui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sit nihil ducimus, aperiam perferendis laboriosam qui. Ullam odio dolore reprehenderit possimus, perferendis illum, itaque, enim nemo quam ipsa magni quas perspiciatis obcaecati autem dolorum pariatur saepe ad non provident repellendus repellat tempora voluptate in. Ratione maxime velit, architecto similique incidunt, harum soluta, ut necessitatibus ea ducimus nisi iure consequuntur beatae animi nulla! Quas ipsa in dignissimos iure, nulla voluptatum impedit, facere eos, sed aliquid officiis ex esse. Commodi repellendus maiores nisi nobis, iusto cumque aliquam repellat doloribus molestias, nam doloremque quae optio provident officia illo magnam at iste quod! Saepe.</p>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, hic?</p>
                         
@@ -134,11 +193,11 @@
             <h1 class="text-center text-3xl mb-5 font-serif">Best Article Chosen for You</h1>
             <p class="text-center text-base text-gray-400">We have curated the best article based on your interest topic</p>
              <!--les autres propositions -->
-            <div class="mx-20 grid  md:grid-cols-2 lg:grid-cols-3">
+            <div class="mx-2 grid  md:grid-cols-2 lg:grid-cols-3">
                 <!--chat gpt-->
-                <div class="mx-2 my-5 border-bottom rounded-xl">
-                    <div class="card border-b-2 border-r-2 border-l-2 rounded-xl pb-5 ">
-                        <img class="mt-10 w-full rounded-xl " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9pUjua1QqXeJzj6A5_29xVo0cPYBbTh00GA&s" alt="">
+                <div class=" my-5">
+                    <div class="card pb-5 ">
+                        <img class="mt-10 mx-2 rounded-xl " src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9pUjua1QqXeJzj6A5_29xVo0cPYBbTh00GA&s" alt="">
                         <h2 class="text-2xl text-center my-5"> Comment ChatGPT Change le Paysage Technologique</h2>
                         <div class="flex justify-center items-center">
                             <img class="rounded-full border " src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="" width="50" >
@@ -146,22 +205,22 @@
                             <p class="ml-5 text-gray-500">7 minutes read</p>
                         </div>
                         <div class="flex justify-center">
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5  py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 lire l'article
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5  py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 technologie
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 tutoriel
                             </button>
                         </div>
                     </div>
                 </div>
                  <!--lancement 6G-->
-                <div class="mx-2 my-5 border-bottom rounded-xl">
-                    <div class="card border-b-2 border-r-2 border-l-2 rounded-xl pb-5">
-                        <img class="mt-10 w-full rounded-xl" src="https://www.meilleure-innovation.com/wp-content/uploads/2023/04/reseau-6g-788x444.png" alt="">
+                <div class=" my-5 ">
+                    <div class="card pb-5">
+                        <img class="mt-10 mx-2 rounded-xl" src="https://www.meilleure-innovation.com/wp-content/uploads/2023/04/reseau-6g-788x444.png" alt="">
                         <h2 class="text-2xl text-center my-5">Lancement de la 6G : La Nouvelle Ère de la Connectivité</h2>
                         <div class="flex justify-center  items-center">
                             <img class="rounded-full border " src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="" width="50" >
@@ -169,13 +228,13 @@
                             <p class="ml-5 text-gray-500">5 minutes read</p>
                         </div>
                         <div class="flex justify-center">
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 lire l'article
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 technologie
                             </button>
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 tutoriel
                             </button>
                         </div>
@@ -183,9 +242,9 @@
                     </div>
                 </div>
                 <!--informatique quantique-->
-                <div class="mx-2 my-5 border-bottom rounded-xl ">
-                    <div class="card border-b-2 border-r-2 border-l-2 rounded-xl pb-5">
-                        <img class="mt-10 w-full rounded-xl" src="https://www.zdnet.fr/wp-content/uploads/zdnet/2024/02/Informatique20quantique20620.jpg" alt="">
+                <div class=" my-5">
+                    <div class="card pb-5">
+                        <img class="mt-10 mx-2 rounded-xl" src="https://www.zdnet.fr/wp-content/uploads/zdnet/2024/02/Informatique20quantique20620.jpg" alt="">
                         <h2 class="text-2xl text-center my-5"> L'Essor de l'Informatique Quantique</h2>
                         <div class="flex justify-center items-center">
                             <img class="rounded-full border " src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="" width="50" >
@@ -193,13 +252,13 @@
                             <p class="ml-5 text-gray-500">7 minutes read</p>
                         </div>
                         <div class="flex justify-center">
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 lire l'article
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 technologie
                             </button>
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 tutoriel
                             </button>
                         </div>
@@ -208,9 +267,9 @@
                 </div>
 
                 <!--réalité augmenté-->
-                <div class="mx-2 my-5 border-bottom rounded-xl ">
-                    <div class="card border-b-2 border-r-2 border-l-2 rounded-xl pb-5">
-                        <img class="mt-10 w-full rounded-xl" src="https://datascientest.com/wp-content/uploads/2024/03/realite_mixte.jpg" alt="">
+                <div class="my-5">
+                    <div class="card pb-5">
+                        <img class="mt-10 mx-2 rounded-xl" src="https://datascientest.com/wp-content/uploads/2024/03/realite_mixte.jpg" alt="">
                         <h2 class="text-2xl text-center my-5"> La Montée Impressionnante de la Réalité Augmentée</h2>
                         <div class="flex justify-center items-center">
                             <img class="rounded-full border " src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="" width="50" >
@@ -219,13 +278,13 @@
                         </div>
                          <!--bouton -->
                         <div class="flex justify-center">
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 lire l'article
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 technologie
                             </button>
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 tutoriel
                             </button>
                         </div>
@@ -234,9 +293,9 @@
                 </div>
 
                 <!--5G-->
-                <div class="mx-2 my-5 border-bottom rounded-xl">
-                    <div class="card border-b-2 border-r-2 border-l-2 rounded-xl pb-5">
-                        <img class="mt-10 w-full rounded-xl" src="https://ork.ma/wp-content/uploads/2020/12/Limpact-de-la-5G-sur-les-industries-et-la-connectivite-mondiale.jpeg" alt="">
+                <div class="my-5">
+                    <div class="card pb-5">
+                        <img class="mt-10 mx-2  rounded-xl" src="https://ork.ma/wp-content/uploads/2020/12/Limpact-de-la-5G-sur-les-industries-et-la-connectivite-mondiale.jpeg" alt="">
                         <h2 class="text-2xl text-center my-5"> L'Impact de la 5G sur l'Innovation Technologique </h2>
                         <div class="flex justify-center  items-center">
                             <img class="rounded-full border " src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="" width="50" >
@@ -244,13 +303,13 @@
                             <p class="ml-5 text-gray-500">5 minutes read</p>
                         </div>
                         <div class="flex justify-center">
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 lire l'article
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 technologie
                             </button>
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 tutoriel
                             </button>
                         </div>
@@ -258,9 +317,9 @@
                     </div>
                 </div>
                 <!--cryptomonnaie-->
-                <div class="mx-2 my-5 border-bottom rounded-xl">
-                    <div class="card border-b-2 border-r-2 border-l-2 rounded-xl pb-5">
-                        <img class="mt-10 w-full rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8J3deEoyZc9FFd-0P84T-jeK6P_XUsdhzkA&ss" alt="">
+                <div class="my-5 ">
+                    <div class="card pb-5">
+                        <img class="mt-10 mx-2  rounded-xl" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8J3deEoyZc9FFd-0P84T-jeK6P_XUsdhzkA&ss" alt="">
                         <h2 class="text-2xl text-center my-5"> Les Cryptomonnaies : Une Révolution Financière en Marche</h2>
                         <div class="flex justify-center  items-center">
                             <img class="rounded-full border " src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="" width="50" >
@@ -268,13 +327,13 @@
                             <p class="ml-5 text-gray-500">10 minutes read</p>
                         </div>
                         <div class="flex justify-center">
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 lire l'article
                             </button>
-                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class=" mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 technologie
                             </button>
-                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-xl text-gray-500 hover:text-black hover:border-black">
+                            <button class="mx-1 mt-5 border-solid border-2 px-5 py-2 rounded-full text-gray-500 hover:text-black hover:border-black">
                                 tutoriel
                             </button>
                         </div>
@@ -285,20 +344,60 @@
         </section>
         <hr class=" my-20 mx-20">
         <!--section write message-->
-        <section class="mx-20 mb-10">
-            <div class="flex justify-between px-10 py-5 mx-30 bg-indigo-600 items-center rounded-xl">
-                <p class="text-white">contribute with us now to share your idea to million members</p>
-                <button class="bg-white px-10 py-2 rounded-full">Write</button>
+    <section class="mx-10 mb-10">
+        <div class="flex justify-between px-10 py-5 mx-30 bg-indigo-600 items-center rounded-xl">
+            <p class="text-white">contribute with us now to share your idea to million members</p>
+            <button class="bg-white px-10 py-2 rounded-full">Write</button>
+        </div>
+    </section>
+
+    <footer class="flex flex-col w-full p-10  sm:px-20 items-center justify-around sm:flex-row ">
+        <div class="flex flex-col items-center">
+          <div class="flex items-center mb-3 -m-1.5 p-1.5">
+            <img class="h-9 w-auto" src="assets/logo/1.png" alt="TRENDY PINK">
+            <span class="text-2xl font-bold ml-2 font-Jost">TRENDY PINK</span>
+          </div>
+          <p class="text-xs">Blk. A-B Jl. Cikutra No.125,<br> Cikutra. Kec. Cibeunying Kidul,<br> Charlotte, North Carolina 40124</p>
+        </div>
+        
+        <div class="flex gap-5 ml-20">
+          <div class="flex flex-col pt-2">
+            <a href="#" class="flex items-center gap-2 text-indigo-600 mb-5">Onglets <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+              <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+            </svg></a>
+            <a href="#" class="text-xs mb-2">Blog</a>
+            <a href="#" class="text-xs mb-2">Travail</a>
+            <a href="#" class="text-xs mb-2">Équipe</a>
+          </div>
+      
+          <div class="flex flex-col pt-2">
+            <a href="#" class="flex items-center gap-2 text-indigo-600 mb-5 shrink ">Contactez-nous</a>
+            <div class="flex gap-2 justify-around">
+              <a href="https://instagram.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                </svg>
+              </a>
+              <a href="https://x.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                  <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                </svg>
+              </a>
+              <a href="https://www.github.com/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg>
+              </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </footer>
     
 
 <!-- Inclure Bootstrap JS et Font Awesome pour les icônes -->
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
