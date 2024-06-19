@@ -69,4 +69,17 @@ document.addEventListener("DOMContentLoaded", function() {
         button.style.display='block';
     })
 
+        let introduction =document.getElementById('introduction');
+        let social =document.getElementById('social');
+        const progressBar = document.getElementById('progressBar');
+    
+        function progress () {
+            console.log(progressBar);
+            progressBar.style.width = ((window.scrollY ) / (document.body.scrollHeight - (introduction.innerHeight + social.innerHeight)) * 100) + '%'
+            requestAnimationFrame (progress);
+            
+        };
+        progress(); 
+    
+
 })

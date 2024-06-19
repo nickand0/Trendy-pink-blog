@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="src/script.js"></script>
+    
     <style>
         #mobile-menu {
           transform: translateX(100%);
@@ -24,6 +25,11 @@
           #mobile-menu {
             width: 100%;
           }
+        }
+        #progressBar {
+            width: 100%;
+            background: black;
+            height: 10px;
         }
       </style>
 </head>
@@ -55,6 +61,7 @@
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
+        
         <div id="mobile-menu" role="dialog" aria-modal="true" class="bg-indigo-700 lg:hidden fixed top-0 right-0 h-screen w-2/5">
           <div class="flex items-center justify-between p-6">
             <a href="#" class="-m-1.5 p-1.5">
@@ -75,11 +82,12 @@
             <a href="#" class="block rounded-md py-3 px-4 text-lg font-normal leading-6 text-white bg-indigo-800 hover:bg-indigo-600 hover:text-white">Contactez-nous</a>
           </div>
         </div>
+        <div class=" absolute h-2 bg-black" id="progressBar"></div>
     </header>
 
 
     <!--section lien reseaux sociaux-->
-    <section class="mt-5 pt-20 pb-4 px-10 flex justify-between items-center sm:px-20">
+    <section id="social" class="mt-5 pt-20 pb-4 px-10 flex justify-between items-center sm:px-20">
         <div class="flex items-center">
             <p class="mr-4"><b>published in © DigitalArtsMedia </b></p>
             <p class="text-sm text-gray-400">5 mai 2024</p>
@@ -101,40 +109,41 @@
     </section>
         
         <!--section lecture text -->
-        <section class="mx-10 ">
+        <section  class="mx-10 ">
                 <div class=" ">
-                    <h1 class="text-5xl text-center my-10 font-serif">Introduction aux Réseaux Neuronaux</h1>
-                    <div class="flex justify-between items-center mt-2 mb-10" >
-                        <div class="flex mb-2 items-center">
-                            <img class="rounded-full border" src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="photo de profil"width="50">
-                            <p class="ml-2"><b>Nikki</b><br>
-                           <span  class="text-sm text-gray-500">Etudiant a GMC</span> </p>
+                    <div id="introduction">
+                        <h1 class="text-5xl text-center my-10 font-serif">Introduction aux Réseaux Neuronaux</h1>
+                        <div class="flex justify-between items-center mt-2 mb-10" >
+                            <div class="flex mb-2 items-center">
+                                <img class="rounded-full border" src="https://c8.alamy.com/compfr/2g7ft9b/parametre-fictif-de-photo-d-avatar-par-defaut-icone-d-image-de-profil-grise-homme-en-t-shirt-2g7ft9b.jpg" alt="photo de profil"width="50">
+                                <p class="ml-2"><b>Nikki</b><br>
+                            <span  class="text-sm text-gray-500">Etudiant a GMC</span> </p>
+                            </div>
+                            <div class="flex items-center">
+                                <p class="text-sm text-gray-500 mr-4">8 min de lecture</p>
+                                <button id="btnAudio">
+                                    <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                                    <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
+                                    <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
+                                    <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
+                                </svg>
+                                </button>
+                                <button id="Pausebutton" class="cursor-pointer hidden ml-2">
+                                    <i  class="fa-solid fa-pause fa-lg "></i>
+                                </button>
+                                <button id="resumebutton" class="cursor-pointer hidden ml-2">
+                                    <i class="fa-solid fa-play fa-lg "></i>
+                                </button>
+                            <button id="stopbutton" class="cursor-pointer hidden ml-2">
+                                <i id="stopbutton" class="fa-solid fa-stop fa-lg "></i>
+                            </button>
+                                
+                            </div>
                         </div>
-                        <div class="flex items-center">
-                            <p class="text-sm text-gray-500 mr-4">8 min de lecture</p>
-                            <button id="btnAudio">
-                                <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-volume-up-fill" viewBox="0 0 16 16">
-                                <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
-                                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.48 5.48 0 0 1 11.025 8a5.48 5.48 0 0 1-1.61 3.89z"/>
-                                <path d="M8.707 11.182A4.5 4.5 0 0 0 10.025 8a4.5 4.5 0 0 0-1.318-3.182L8 5.525A3.5 3.5 0 0 1 9.025 8 3.5 3.5 0 0 1 8 10.475zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06"/>
-                              </svg>
-                            </button>
-                            <button id="Pausebutton" class="cursor-pointer hidden ml-2">
-                                <i  class="fa-solid fa-pause fa-lg "></i>
-                            </button>
-                            <button id="resumebutton" class="cursor-pointer hidden ml-2">
-                                <i class="fa-solid fa-play fa-lg "></i>
-                            </button>
-                           <button id="stopbutton" class="cursor-pointer hidden ml-2">
-                            <i id="stopbutton" class="fa-solid fa-stop fa-lg "></i>
-                           </button>
-                            
+                        <div class="flex justify-center mb-20 cursor-pointer ">
+                            <iframe class="w-full h-56 shadow-2xl rounded-xl lg:h-max" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0"></iframe>
                         </div>
-                    </div>
-                    <div class="flex justify-center mb-20 cursor-pointer ">
-                        <iframe class="w-full h-56 shadow-2xl rounded-xl lg:h-max" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0"></iframe>
-                    </div>
-                    
+                    </div>    
                     <div id="text" class="lg:mx-32">
                         <p class="text-justify "><b>Découvrez comment les réseaux neuronaux révolutionnent l'intelligence artificielle. 🧠🤖</b></p>
                 
